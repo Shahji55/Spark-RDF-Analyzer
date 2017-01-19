@@ -8,6 +8,8 @@
 
 <script type="text/javascript" src="js/app-config.js"></script>
 <script type="text/javascript">
+
+
 	function getGraphName() {
 		var name = getCookie('graphName');
 		document.getElementById("GraphName").innerHTML = name;
@@ -79,6 +81,11 @@
 						<li><a href="./conviewer/index.html"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>&nbsp;Connectivity
 								Viewer</a></li>
 						<li><a href="visualizer.html"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>&nbsp;Schema Visualizer</a></li>
+<<<<<<< HEAD
+						<li><a href="browser.html"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;RDF Browser</a></li>
+=======
+						<li><a href="centrality.html"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>&nbsp;Centrality</a></li>
+>>>>>>> centrality
 					</ul>
 				</div>
 			</nav>

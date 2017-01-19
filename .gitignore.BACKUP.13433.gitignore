@@ -1,0 +1,11 @@
+.classpath
+.project
+.settings
+target
+*.jar
+<<<<<<< HEAD
+/src/main/webapp/js/app-config.js
+
+=======
+src/main/webapp/js/
+>>>>>>> centrality

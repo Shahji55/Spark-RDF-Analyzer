@@ -16,6 +16,7 @@
 
 package rdfanalyzer.spark;
 
+
 import org.apache.spark.sql.DataFrame;
 import org.apache.spark.sql.Row;
 
@@ -163,7 +164,9 @@ public class ConnViewer {
 
 			DataFrame predicatesFrame = Service.sqlCtx()
 					.sql("SELECT subject, predicate, object FROM Graph WHERE " + Condition);
+
 			predicatesFrame.registerTempTable("Graph2");
+			
 
 			return "Graph2";
 		} else {

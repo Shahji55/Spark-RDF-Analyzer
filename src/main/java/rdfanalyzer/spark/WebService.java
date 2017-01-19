@@ -51,6 +51,24 @@ public class WebService {
 		return objResponse;
 	}
 
+	
+	@GET
+	@Path("/calculateCentrality/{DataSet}/{Node}/{Type}")
+	public String calculateCentrality(@PathParam("DataSet") String dataSet, @PathParam("Node") String node,
+			@PathParam("Type") String MetricType) {
+
+		String objResponse = "";
+		System.out.println("called calculateCentrality");
+		System.out.println(MetricType);
+		
+		try {
+			objResponse = Centrality.main(MetricType, dataSet, node);
+		} catch (Exception e) {
+			objResponse = "Error !<br>Error Message: " + e.getMessage();
+		}
+
+		return objResponse;
+	}
 	@GET
 	@Path("/countEdges/{DataSet}")
 	public String getMsg(@PathParam("DataSet") String dataSet) {
@@ -84,7 +102,12 @@ public class WebService {
 	@GET
 	@Path("/countNodes/{DataSet}")
 	public String getMsg3(@PathParam("DataSet") String dataSet) {
-		String[] args = { dataSet };
+
+		/*
+		 *  1 = need the result in string for showing the output on frontend
+		 *  2 = need the output in int to use to perform other operations
+		 */
+		String[] args = { dataSet, "1" };
 		String objResponse = "";
 
 		try {
@@ -269,6 +292,7 @@ public class WebService {
 	public String getMsg16(@PathParam("DataSet") String dataSet, @PathParam("Node1") String startN,
 			@PathParam("Node2") String endN, @PathParam("Predicates") String Predicates,
 			@PathParam("Pattern") String Pattern) {
+
 		String objResponse = "";
 
 		try {
